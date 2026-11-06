@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Get Key Demo</title>
+<style>
+  body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #111;
+    color: #eee;
+  }
+  #keyDisplay {
+    font-size: 48px;
+    padding: 20px 40px;
+    border: 2px solid #4caf50;
+    border-radius: 12px;
+    margin-bottom: 20px;
+  }
+  #info {
+    font-size: 16px;
+    color: #aaa;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div id="keyDisplay">Nhấn phím bất kỳ</div>
+<div id="info"></div>
+
+<script>
+document.addEventListener('keydown', function(e) {
+  document.getElementById('keyDisplay').textContent = e.key;
+  document.getElementById('info').innerHTML =
+    `key: ${e.key} | code: ${e.code} | keyCode: ${e.keyCode}` +
+    `<br>Shift: ${e.shiftKey} | Ctrl: ${e.ctrlKey} | Alt: ${e.altKey}`;
+});
+</script>
+
+</body>
+</html>
